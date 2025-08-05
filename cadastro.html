@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starlink - Ativação de Conexão</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0b0f19;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #1c2331;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    img.logo {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #00aaff;
+      margin-bottom: 20px;
+    }
+    .key-box {
+      background-color: #0f1724;
+      border: 1px dashed #00aaff;
+      padding: 20px;
+      margin: 20px 0;
+      font-size: 18px;
+      word-break: break-word;
+      position: relative;
+    }
+    .key-text {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .copy-btn {
+      background-color: #00aaff;
+      color: #0b0f19;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .copy-btn:hover {
+      background-color: #008fcc;
+    }
+    .payment-info {
+      margin-top: 30px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .important {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="https://super.abril.com.br/wp-content/uploads/2022/12/SI_446_novas_starlink.jpg?quality=70&strip=info&w=1024&h=682&crop=1" alt="Starlink Satélites" />
+
+    <h1>Conexão Starlink</h1>
+    <p>Sua conexão está <strong>prestes a ser ativada</strong>.</p>
+    <p>Para liberar a <strong>chave de conexão</strong> ao dispositivo, é necessário confirmar o pagamento único de <strong>R$ 4,50</strong>.</p>
+
+    <div class="key-box">
+      <div class="key-text" id="pixKey">54550d5e-37b4-4b8b-9b54-98963b24d863</div><br>
+      <button class="copy-btn" onclick="copyPixKey()">Copiar Chave Pix</button>
+    </div>
+
+    <div class="payment-info">
+      <p><strong>Por que é necessário o pagamento?</strong></p>
+      <p>Esse valor simbólico serve para autenticar o dispositivo e finalizar o processo de ativação da conexão. O pequeno pagamento garante:</p>
+      <ul style="text-align: left; max-width: 500px; margin: 0 auto;">
+        <li>Validação da titularidade do usuário e prevenção contra conexões automatizadas não autorizadas.</li>
+        <li>Confirmação de que o dispositivo está ativo e apto a receber dados via rede Starlink.</li>
+        <li>Finalização do vínculo entre o terminal Starlink e o usuário autorizado.</li>
+      </ul>
+      <p>Após o pagamento, a chave será automaticamente liberada e sua conexão estará ativa em até 2 minutos.</p>
+      <p class="important">Certifique-se de copiar a chave Pix corretamente para concluir a operação.</p>
+    </div>
+  </div>
+
+  <script>
+    function copyPixKey() {
+      const key = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(key).then(function () {
+        alert("Chave Pix copiada com sucesso!");
+      }, function () {
+        alert("Erro ao copiar a chave Pix.");
+      });
+    }
+  </script>
+</body>
+</html>
